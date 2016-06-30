@@ -1,5 +1,5 @@
 <?php
-// This file is part of the smartcertificatesearch module for Moodle - http://moodle.org/
+// This file is part of the Smart Certificate Search module for Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * smartcertificatesearch module internal API,
+ * smart certificate search module internal API,
  * this is in separate file to reduce memory use on non-smartcertificate pages.
  *
  * @package    tool_smartcertificatesearch
@@ -55,7 +55,7 @@ function smartcertificatesearch_print_user_files($smartcertificate, $userid, $co
 
     return $output;
 }
- // Find course module id.
+// Find course module id.
 function smartcertificatesearch_cm_id($id, $code) {
     global $DB;
     $sql = "SELECT ci.smartcertificateid As smartcertificateid,ci.code AS code,nc.course As course,m.id As id
@@ -85,8 +85,8 @@ function smartcertificatesearch_find_username($id) {
     INNER JOIN
         {user} u
         ON ci.userid = u.id where ci.id = $id";
-    $rec = $DB->get_records_sql($sql);
-    foreach ($rec as $records) {
+    $record = $DB->get_records_sql($sql);
+    foreach ($record as $records) {
         $sudentname = $records->firstname . " " . $records->lastname;
     }
     return $sudentname;

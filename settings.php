@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Link to Search Certificate
+ * Link to Smart Certificate Search
  *
  * @package    tool
- * @subpackage Search Certificate
+ * @subpackage Smart Certificate Search
  * @copyright  Vidya Mantra EduSystems Pvt. Ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

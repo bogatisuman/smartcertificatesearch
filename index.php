@@ -85,10 +85,10 @@ if (!empty($userinput)) {
         {user} u
     ON u.id = ci.userid where (u.username = '$userinput') OR (concat(u.firstname,' ',lastname)  = '$userinput') OR (ci.code = '$userinput')";
 
-    $rec = $DB->get_records_sql($sql);
+    $record = $DB->get_records_sql($sql);
     $table = new html_table();
     $table->head = array('Student Name', 'E-mail', 'Certificate code', 'Certificate Received Date', 'Student Certificate', 'Action');
-    foreach ($rec as $records) {
+    foreach ($record as $records) {
         $cm = smartcertificatesearch_cm_id($records->smartcertificateid, $records->code);
         $cm = get_coursemodule_from_id('smartcertificate', $cm);
         $context = context_module::instance($cm->id);
@@ -105,7 +105,7 @@ if (!empty($userinput)) {
             array('title' => $strdelete));
         $table->data[] = array($sudentname, $email, $code, $certificatereceiveddate, $certificatelink, $link);
     }
-    if (!empty($rec)) {
+    if (!empty($record)) {
         echo html_writer::table($table);
     } else {
         echo "Please provide valid information";
