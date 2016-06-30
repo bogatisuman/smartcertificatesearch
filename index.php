@@ -92,7 +92,7 @@ if (!empty($userinput)) {
         $cm = smartcertificatesearch_cm_id($records->smartcertificateid, $records->code);
         $cm = get_coursemodule_from_id('smartcertificate', $cm);
         $context = context_module::instance($cm->id);
-        $sudentname = $records->firstname . " " . $records->lastname;;
+        $sudentname = $records->firstname . " " . $records->lastname;
         $email = $records->email;
         $code = $records->code;
         $date = new DateTime("@$records->timecreated");
