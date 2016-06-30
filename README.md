@@ -14,7 +14,7 @@ Normally admin delete any student's certification record on request of student i
 Requirements
 ------------
 
-Moodle 2.9 +
+Moodle 3.0 +
 
 Installation
 ------------
