@@ -71,10 +71,9 @@ function smartcertificatesearch_cm_id($id, $code) {
         $course = $records->course;
         $moduleid = $records->id;
     }
-    $result = $DB->get_record_sql('SELECT id FROM {course_modules} WHERE course = :course AND module = :module AND instance = :instance ',
-        array('course' => $course, 'module' => $moduleid, 'instance' => $id));
-
-    return $result->id;
+    $cmid = $DB->get_field('course_modules','id', array('course' => $course, 'module' => $moduleid, 'instance' => $id));
+    
+    return $cmid;
 }
 // Find Full Name of User.
 function smartcertificatesearch_find_username($id) {
